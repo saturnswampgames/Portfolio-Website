@@ -1,0 +1,517 @@
+* {
+  font-family: "Rambla", serif; }
+
+body {
+  margin: 0;
+  padding: 0; }
+
+hr {
+  margin: 0;
+  border: 1px solid #cccccc; }
+
+.alert {
+  margin: 0;
+  background-color: #ff3333;
+  color: #ffffff; }
+
+.header-section {
+  background-color: #262626;
+  padding: 12px 8px 12px 8px; }
+
+.header-text {
+  color: #ff3333; }
+
+.header-text h1 {
+  margin-left: 15%;
+  margin-top: 13px;
+  font-size: 45px; }
+  .header-text h1:hover {
+    color: #ffffff; }
+
+.footer-section {
+  background-color: #262626;
+  height: auto;
+  padding: 12px 8px 12px 8px;
+  font-size: 18px; }
+
+.footer-section a.contact:hover {
+  cursor: pointer; }
+
+.join-links a, .social-links a {
+  margin-top: 8px;
+  text-decoration: none;
+  color: #ffffff; }
+  .join-links a:hover, .social-links a:hover {
+    text-decoration: underline; }
+
+.social-links a i {
+  font-size: 22px;
+  margin-left: 5px; }
+
+.bi-facebook:hover {
+  color: #7dbeff; }
+
+.bi-instagram:hover {
+  color: #ff1ac1; }
+
+.bi-twitter:hover {
+  color: #7dbeff; }
+
+.bi-github:hover {
+  color: #939393; }
+
+.iconify {
+  height: 22px;
+  width: 22px;
+  margin-left: 5px;
+  margin-bottom: 5px; }
+
+.iconify.redbubble:hover {
+  color: #ff6666; }
+
+.iconify.deviantart:hover {
+  color: #4dd966; }
+
+.iconify.linkedin:hover {
+  color: #75bbff; }
+
+footer p {
+  color: #ffffff;
+  margin-left: 90%;
+  margin-top: 15px;
+  margin-bottom: 0;
+  font-size: 15px; }
+
+.footer-hr {
+  margin: 0;
+  border: 1px solid #000000; }
+
+.game-container {
+  padding: 25px 22px 25px 22px;
+  background-color: #d6ffeb; }
+
+.headings {
+  display: none; }
+
+.game img {
+  border: 3px solid #ff9999;
+  border-radius: 8px;
+  position: relative; }
+
+.game h3 {
+  font-size: 30px;
+  color: #00cc66;
+  display: none;
+  position: relative; }
+
+.game p {
+  font-size: 22px;
+  color: #262626;
+  display: none;
+  position: relative; }
+
+.model-container {
+  padding-top: 35px;
+  background-color: #ff9999; }
+
+.model img {
+  border: 3px solid #262626;
+  -webkit-border: 3px solid #262626;
+  -moz-border: 3px solid #262626; }
+
+.model img.firstImage {
+  width: 280px; }
+
+.model h3.coming-soon {
+  display: block;
+  color: #b30000;
+  text-align: center;
+  margin-top: 130px; }
+
+.model p.coming-soon {
+  display: block;
+  color: #000000;
+  font-size: 30px;
+  text-align: center; }
+
+.model h3, p {
+  color: #b30000; }
+
+.model-container .headings h2 {
+  color: #00b300; }
+
+.game p a {
+  text-decoration: none;
+  color: #000000; }
+  .game p a:hover {
+    text-decoration: underline; }
+
+.model-container {
+  padding: 25px 15px 25px 15px; }
+
+.game.design img.secondImg {
+  margin-left: 20%; }
+
+.design {
+  margin-top: 35px; }
+
+.design img {
+  border: 3px solid #00b300;
+  -webkit-border: 3px solid #00b300;
+  -moz-border: 3px solid #00b300; }
+
+.design-container {
+  background-color: #99ffcc;
+  padding: 25px 15px 25px 15px; }
+
+.game.merch img.firstImg {
+  margin-left: 4%; }
+
+.game.merch img.secondImg {
+  margin-left: 27%; }
+
+.game.merch img.thirdImg {
+  margin-right: 4%; }
+
+.merch-container {
+  padding: 25px 15px 25px 15px;
+  background-color: #99ffcc; }
+
+.navbar-section {
+  background-color: #00b33c; }
+
+.navbar {
+  justify-content: flex-start;
+  display: block; }
+  .navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 30px;
+    padding-right: 25px; }
+    .navbar a:hover {
+      color: #262626; }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding-top: 5px;
+  z-index: 9; }
+
+.sticky + .game-container {
+  padding-top: 80px; }
+
+.icon {
+  display: none; }
+
+.game img {
+  margin-top: 40px;
+  height: 280px; }
+
+.game img.secondImg {
+  margin-left: 25%; }
+
+.game img.thirdImg {
+  float: right; }
+
+.game img.firstImg {
+  float: left;
+  margin-left: 5px; }
+
+.model img.firstImg {
+  width: 280px; }
+
+.slides {
+  height: 600px;
+  width: 100%;
+  display: block;
+  margin: auto;
+  padding: 25px 20px; }
+
+.underlines {
+  padding-bottom: 15px; }
+
+.left,
+.right {
+  margin: 0; }
+  .left:hover,
+  .right:hover {
+    background-color: #ff3333; }
+
+.SlideShow {
+  background-color: #66b3ff; }
+
+.headings h2 {
+  font-size: 45px;
+  color: #ff3333; }
+.headings h3 {
+  color: white; }
+
+.btn-games {
+  color: #ffffff;
+  background-color: #66b3ff;
+  border: 3px solid #000000;
+  width: 250px;
+  height: 80px;
+  border-radius: 18px;
+  font-size: 30px;
+  text-align: center;
+  margin: auto;
+  display: block;
+  margin-top: 55px; }
+
+.btn-games.models {
+  color: #ffffff;
+  background-color: #66b3ff;
+  border: 3px solid #000000;
+  width: 250px;
+  height: 80px; }
+
+.button a {
+  text-decoration: none; }
+
+.btn-games:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite; }
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg); }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg); }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg); }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg); }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg); }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg); }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg); }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg); }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg); }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg); }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg); } }
+@media screen and (max-width: 1024px) {
+  .game img.secondImg {
+    margin-left: 13%; }
+
+  .game.design img.secondImg {
+    margin-left: 5%; }
+
+  .game.merch img.secondImg {
+    margin-left: 15%; } }
+@media screen and (max-width: 800px) {
+  .game img.firstImg, .game.merch img.firstImg {
+    float: none;
+    margin: auto;
+    display: block; }
+
+  .game img.secondImg, .game.merch img.secondImg {
+    margin-left: 35%; }
+
+  .game img.thirdImg, .game.merch img.thirdImg {
+    display: block;
+    margin: auto;
+    float: none;
+    margin-top: 40px; }
+
+  .game h3, p {
+    margin-top: 30px; }
+
+  .btn-games {
+    margin-top: 35px; }
+
+  .model img.firstImg {
+    margin-top: 35px; }
+
+  .game.design img.secondImg {
+    margin-left: 30%; } }
+@media screen and (max-width: 770px) {
+  .game img.firstImg, .game.merch img.firstImg {
+    float: none;
+    margin: auto;
+    display: block; }
+
+  .game img.secondImg, .game.merch img.secondImg {
+    margin-left: 35%; }
+
+  .game img.thirdImg, .game.merch img.thirdImg {
+    display: block;
+    margin: auto;
+    float: none;
+    margin-top: 40px; }
+
+  .game h3, p {
+    margin-top: 30px; }
+
+  .btn-games {
+    margin-top: 35px; }
+
+  footer p {
+    color: #ffffff;
+    margin-left: 80%;
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-size: 15px; } }
+@media screen and (max-width: 600px) {
+  .navbar a:not(:first-child) {
+    display: none; }
+
+  .navbar a.icon {
+    float: right;
+    display: block;
+    margin-right: 0;
+    padding-right: 0; }
+
+  .game img, h3, p {
+    margin-top: 35px; }
+
+  .game img {
+    margin-left: 15%; }
+
+  .game img.thirdImg {
+    float: none; }
+
+  .game img.firstImg {
+    float: none; }
+
+  .game.merch img.thirdImg {
+    margin: auto;
+    margin-left: 13%;
+    margin-top: 50px; }
+
+  .game {
+    margin-left: 18%; }
+
+  .game img.firstImg {
+    margin-left: 10%; }
+
+  .game img.secondImg {
+    margin-left: 18%; }
+
+  .game.merch img.secondImg {
+    margin-left: 17%; }
+
+  .models {
+    margin-top: 35px; }
+
+  video.slides {
+    width: 500px;
+    height: 550px; }
+
+  .game.design img.secondImg {
+    margin: auto;
+    margin-top: 45px; }
+
+  .btn-games {
+    margin-top: 55px; }
+
+  .btn-games.models {
+    margin-left: 13%; }
+
+  .btn-games.design {
+    margin-left: 12%; }
+
+  .btn-games.merch {
+    margin-left: 15%; }
+
+  .bi-facebook {
+    color: #7dbeff; }
+
+  .bi-instagram {
+    color: #ff1ac1; }
+
+  .bi-twitter {
+    color: #7dbeff; }
+
+  .bi-github {
+    color: #939393; }
+
+  .iconify.redbubble {
+    color: #ff6666; }
+
+  .iconify.deviantart {
+    color: #4dd966; }
+
+  .iconify.linkedin {
+    color: #75bbff; }
+
+  footer p {
+    color: #ffffff;
+    margin-left: 60%;
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-size: 15px; } }
+@media screen and (max-width: 600px) {
+  .navbar.responsive {
+    position: relative;
+    z-index: 9999; }
+
+  .navbar.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-top: 10px;
+    padding-right: 15px; }
+
+  .navbar.responsive a {
+    float: none;
+    display: block;
+    text-align: left; } }
+@media screen and (max-width: 480px) {
+  .game {
+    margin-left: 8%; }
+
+  .game img, h3, p {
+    margin-top: 70px; }
+
+  .game img, h3, p {
+    margin-left: 2px; }
+
+  .game img {
+    margin-bottom: 15px;
+    margin-left: 1%; }
+
+  .game img.firstImg {
+    margin-left: 2%; }
+
+  .game img.secondImg {
+    margin-left: 10%; }
+
+  .game img.thirdImg {
+    margin-left: 0;
+    margin-top: 40px; }
+
+  .game h3, p {
+    margin-top: 45px; }
+
+  video.slides {
+    width: 280px;
+    height: 380px; }
+
+  .header {
+    width: 300px; }
+
+  .btn-games {
+    margin-top: 50px;
+    width: 250px;
+    margin-left: 4%; }
+
+  .btn-games.models, .btn-games.design, .btn-games.merch {
+    margin-left: 4%;
+    width: 250px; }
+
+  .model img.firstImg {
+    width: 280px;
+    margin-top: 25px; }
+
+  .coming-soon {
+    margin-left: 45px; } }
+
+/*# sourceMappingURL=main.css.map */

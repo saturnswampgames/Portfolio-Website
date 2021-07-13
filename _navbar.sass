@@ -1,0 +1,27 @@
+.navbar-section
+  background-color: $brand-secondary
+
+.navbar
+    justify-content: flex-start
+    display: block
+    a
+      color: $brand-white
+      text-decoration: none
+      font-size: $font-large
+      padding-right: 25px
+      &:hover
+        color: $brand-tertiary
+
+
+.sticky
+  position: fixed
+  top: 0
+  width: 100%
+  padding-top: 5px
+  z-index: 9
+
+.sticky + .game-container
+  padding-top: 80px
+
+.icon
+  display: none
