@@ -31,7 +31,7 @@ function myFunction()
 
 // MODALS ///////////////
 $(document).ready(function(){
-  $(document).load(function(){
+  $(window).on('load', function(){
     $("#myModal").modal("show");
   });
 });
