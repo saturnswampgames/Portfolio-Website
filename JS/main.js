@@ -30,8 +30,8 @@ function myFunction()
 
 
 // MODALS ///////////////
-$(document).ready(function(){
-  $(document).load(function(){
+$(document).ready(function () {
+  $(window).on('load', function () {
     $("#myModal").modal("show");
   });
 });
@@ -401,3 +401,4 @@ $("#btn-merch").mouseleave(function () {
   $("#btn-merch").css('border-radius', '18px');
 });
 });
+
