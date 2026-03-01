@@ -59,9 +59,9 @@ export default function Contact() {
     <section className="section" id="contact" ref={sectionRef}>
       <div className="section-header">
         <p className="chapter-tag">FINAL CHAPTER</p>
-        <h2 className="section-title">Signal the Creator</h2>
+        <h2 className="section-title">Let's Create</h2>
         <p className="section-sub">
-          Got an idea? A collab? A question? Even a meme? Send it over.
+          Got a brand to build? A project that needs a creative eye? Let's talk.
         </p>
       </div>
 

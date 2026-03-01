@@ -102,11 +102,11 @@ function Scene() {
 
 /* ── Typing animation (vanilla) ──────────────────────────── */
 const PHRASES = [
-  "I don't pick a lane — I pave one.",
-  "Gamer. Creator. Future Legend.",
-  "Bringing wild ideas to life since day one.",
-  "Design. Code. Ship. Repeat.",
-  "Saturnswamp was here.",
+  "Branding that hits different.",
+  "Packaging that sells before you open it.",
+  "Social content that stops the scroll.",
+  "Motion that makes ideas move.",
+  "Web design with actual personality.",
 ]
 
 function useTyping(elRef) {
@@ -185,7 +185,7 @@ export default function Hero() {
           className="pixel-text pixel-xs"
           style={{ color: 'var(--cyan)', letterSpacing: '0.3em', marginBottom: '1.5rem' }}
         >
-          [ PLAYER ONE HAS ENTERED ]
+          [ CREATIVE STUDIO — EST. 2020 ]
         </p>
 
         <h1 ref={titleRef} style={styles.title}>
@@ -205,12 +205,12 @@ export default function Hero() {
           ref={descRef}
           style={styles.desc}
         >
-          Game Dev &nbsp;·&nbsp; Designer &nbsp;·&nbsp; Video Editor &nbsp;·&nbsp; Vibe Coder &nbsp;·&nbsp; Future Legend
+          Branding &nbsp;·&nbsp; Packaging &nbsp;·&nbsp; Social Media &nbsp;·&nbsp; Motion &nbsp;·&nbsp; Web
         </p>
 
         <div ref={ctaRef} style={styles.cta}>
-          <a href="#about"  className="btn-primary">Start the Journey</a>
-          <a href="#games"  className="btn-ghost">View Quests</a>
+          <a href="#work"    className="btn-primary">See the Work</a>
+          <a href="#contact" className="btn-ghost">Start a Project</a>
         </div>
       </div>
 

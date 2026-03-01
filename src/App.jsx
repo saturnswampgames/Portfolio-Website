@@ -5,11 +5,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Navbar   from './components/Navbar'
 import Hero     from './components/Hero'
 import About    from './components/About'
-import Arsenal  from './components/Arsenal'
-import Games    from './components/Games'
-import Models   from './components/Models'
-import Designs  from './components/Designs'
-import Merch    from './components/Merch'
+import Services from './components/Services'
+import Work     from './components/Work'
+import Process  from './components/Process'
 import Contact  from './components/Contact'
 import Footer   from './components/Footer'
 
@@ -24,9 +22,6 @@ export default function App() {
     const cursor      = cursorRef.current
     const cursorTrail = cursorTrailRef.current
     if (!cursor || !cursorTrail) return
-
-    let trailX = 0
-    let trailY = 0
 
     const onMove = (e) => {
       cursor.style.left = e.clientX + 'px'
@@ -54,11 +49,9 @@ export default function App() {
       <main>
         <Hero />
         <About />
-        <Arsenal />
-        <Games />
-        <Models />
-        <Designs />
-        <Merch />
+        <Services />
+        <Work />
+        <Process />
         <Contact />
       </main>
       <Footer />

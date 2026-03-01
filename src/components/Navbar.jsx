@@ -1,12 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 
 const links = [
-  { label: 'The Lore',  href: '#about'   },
-  { label: 'Arsenal',   href: '#arsenal'  },
-  { label: 'Quests',    href: '#games'    },
-  { label: 'Gallery',   href: '#designs'  },
-  { label: 'Shop',      href: '#merch'    },
-  { label: 'Signal',    href: '#contact'  },
+  { label: 'About',    href: '#about'    },
+  { label: 'Services', href: '#services' },
+  { label: 'Work',     href: '#work'     },
+  { label: 'Process',  href: '#process'  },
+  { label: 'Contact',  href: '#contact'  },
 ]
 
 export default function Navbar() {

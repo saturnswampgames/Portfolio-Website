@@ -5,11 +5,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const HP_BARS = [
-  { label: 'CREATIVITY',  pct: 97, color: 'var(--gold)'       },
-  { label: 'DESIGN',      pct: 88, color: 'var(--purple-light)'},
-  { label: 'VIDEO EDIT',  pct: 82, color: 'var(--cyan)'        },
-  { label: 'GAME DEV',    pct: 75, color: 'var(--pink)'        },
-  { label: 'WEB DEV',     pct: 80, color: 'var(--cyan)'        },
+  { label: 'BRANDING',         pct: 95, color: 'var(--gold)'       },
+  { label: 'PACKAGING',        pct: 88, color: 'var(--purple-light)'},
+  { label: 'SOCIAL MEDIA',     pct: 92, color: 'var(--cyan)'        },
+  { label: 'MOTION GRAPHICS',  pct: 78, color: 'var(--pink)'        },
+  { label: 'WEB DESIGN',       pct: 85, color: 'var(--cyan)'        },
 ]
 
 export default function About() {
@@ -20,7 +20,6 @@ export default function About() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Slide in left + right columns
       gsap.from(leftRef.current, {
         scrollTrigger: { trigger: sectionRef.current, start: 'top 75%' },
         x: -60, opacity: 0, duration: 1, ease: 'power3.out',
@@ -29,15 +28,12 @@ export default function About() {
         scrollTrigger: { trigger: sectionRef.current, start: 'top 75%' },
         x: 60, opacity: 0, duration: 1, ease: 'power3.out',
       })
-
-      // Animate HP bars
       barsRef.current.forEach((bar, i) => {
         if (!bar) return
-        const target = bar.dataset.pct + '%'
         gsap.fromTo(bar,
           { width: '0%' },
           {
-            width: target,
+            width: bar.dataset.pct + '%',
             duration: 1.2,
             ease: 'power2.out',
             delay: i * 0.1,
@@ -46,7 +42,6 @@ export default function About() {
         )
       })
     }, sectionRef)
-
     return () => ctx.revert()
   }, [])
 
@@ -54,8 +49,8 @@ export default function About() {
     <section className="section" id="about" ref={sectionRef}>
       <div className="section-header">
         <p className="chapter-tag">CHAPTER I</p>
-        <h2 className="section-title">The Lore</h2>
-        <p className="section-sub">Every legend has an origin story.</p>
+        <h2 className="section-title">The Creator</h2>
+        <p className="section-sub">The person behind the work — and why it matters.</p>
       </div>
 
       <div style={styles.grid}>
@@ -63,37 +58,39 @@ export default function About() {
         <div ref={leftRef} style={styles.bio}>
           <p style={styles.highlight}>
             Hey. I'm{' '}
-            <span className="accent-gold">Saurabh Setia</span> — but you probably
-            know me as{' '}
+            <span className="accent-gold">Saurabh Setia</span> — the creative
+            force behind{' '}
             <span className="accent-purple">Saturnswamp</span>.
           </p>
           <p style={styles.body}>
-            I don't just pick one thing and stick with it — that's boring. I
-            design, I edit, I build, I vibe-code ideas into existence, and I
-            generally refuse to let a good creative idea die in a notes app.
+            I'm a designer who operates at the intersection of strategy and
+            aesthetics. Not just someone who makes things look good — someone
+            who makes things{' '}
+            <em>work</em> and look good at the same time.
           </p>
           <p style={styles.body}>
-            Games got me into creating. Anime made me obsessed with storytelling.
-            Manga taught me you don't need colour to blow someone's mind. And
-            somewhere between all that, I figured out I wanted to{' '}
-            <span className="accent-cyan">build something with my name on it</span>.
+            Anime-obsessed, gamer-brained, and design-driven. The same eye that
+            obsesses over manga panel composition is the same one laying out your{' '}
+            <span className="accent-cyan">brand identity</span>.
           </p>
           <p style={styles.body}>
-            Games, Designs, Websites — I'm not picking a lane. I'm paving one.
+            Brands, packaging, social, motion, web — I treat every brief like a
+            new quest. The mission is always the same:{' '}
+            <span className="accent-gold">make it impossible to ignore</span>.
           </p>
 
           <div style={styles.stats}>
             <div style={styles.statItem}>
-              <span style={styles.statNum} className="accent-gold">3+</span>
-              <span style={styles.statLabel}>Games Shipped</span>
+              <span style={styles.statNum} className="accent-gold">50+</span>
+              <span style={styles.statLabel}>Projects</span>
             </div>
             <div style={styles.statItem}>
-              <span style={styles.statNum} className="accent-purple">∞</span>
-              <span style={styles.statLabel}>Ideas Brewing</span>
+              <span style={styles.statNum} className="accent-purple">3+</span>
+              <span style={styles.statLabel}>Years</span>
             </div>
             <div style={styles.statItem}>
               <span style={styles.statNum} className="accent-cyan">1</span>
-              <span style={styles.statLabel}>Big Dream</span>
+              <span style={styles.statLabel}>Big Vision</span>
             </div>
           </div>
         </div>
@@ -113,11 +110,11 @@ export default function About() {
 
               <div style={styles.profileInfo}>
                 {[
-                  ['NAME',    'SAURABH SETIA'],
-                  ['ALIAS',   'SATURNSWAMP'],
-                  ['CLASS',   'CREATIVE ENTITY'],
-                  ['STATUS',  null],
-                  ['MISSION', 'BUILD SOMETHING BIG'],
+                  ['NAME',   'SAURABH SETIA'],
+                  ['ALIAS',  'SATURNSWAMP'],
+                  ['CLASS',  'CREATIVE DESIGNER'],
+                  ['STATUS', null],
+                  ['FOCUS',  'BRAND · PACK · MOTION'],
                 ].map(([key, val]) => (
                   <p key={key} className="pixel-text pixel-xs" style={{ color: 'var(--text-subtle)', marginBottom: '0.55rem' }}>
                     {key}:{' '}
@@ -133,7 +130,7 @@ export default function About() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
                 {HP_BARS.map(({ label, pct, color }, i) => (
                   <div key={label}>
-                    <p className="pixel-text pixel-xxs" style={{ color: 'var(--text-muted)', marginBottom: '0.3rem' }}>
+                    <p className="pixel-text" style={{ fontSize: '0.35rem', color: 'var(--text-muted)', marginBottom: '0.3rem', letterSpacing: '0.12em' }}>
                       {label}
                     </p>
                     <div style={styles.hpTrack}>
@@ -158,7 +155,9 @@ export default function About() {
 
       <style>{`
         @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.45} }
-        .pixel-xxs { font-size: 0.35rem; }
+        @media (max-width: 900px) {
+          #about > .section > div { grid-template-columns: 1fr !important; }
+        }
       `}</style>
     </section>
   )
@@ -252,14 +251,3 @@ const styles = {
     transition: 'width 1.2s ease',
   },
 }
-
-// Responsive override via a global style tag
-const AboutResponsive = () => (
-  <style>{`
-    @media (max-width: 900px) {
-      #about .about-grid-inner {
-        grid-template-columns: 1fr !important;
-      }
-    }
-  `}</style>
-)
