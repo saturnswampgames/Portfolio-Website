@@ -6,39 +6,49 @@ gsap.registerPlugin(ScrollTrigger)
 
 const SERVICES = [
   {
-    icon: '✦',
-    title: 'Branding & Identity',
-    desc: 'Logos, brand guidelines, visual systems — built to tell a story before a single word is read. The kind of brand that people remember.',
-    glow: 'var(--gold-glow)',
-    border: 'var(--gold)',
+    icon:    '✦',
+    rarity:  '● LEGENDARY',
+    rarityColor: 'var(--gold)',
+    title:   'Branding & Identity',
+    desc:    "Not just a logo. A whole universe — marks, type, colour, personality. The stuff people recognise in a thumbnail before they even read the name.",
+    glow:    'var(--gold-glow)',
+    border:  'var(--gold)',
   },
   {
-    icon: '📦',
-    title: 'Packaging Design',
-    desc: "Packaging that earns a second look on the shelf — and then a purchase. Because great packaging doesn't just contain a product, it sells it.",
-    glow: 'var(--purple-glow)',
-    border: 'var(--purple-light)',
+    icon:    '📦',
+    rarity:  '● EPIC',
+    rarityColor: 'var(--purple-light)',
+    title:   'Packaging Design',
+    desc:    "The unboxing is part of the product. I design packaging that earns its shelf space and makes people reach for it without thinking.",
+    glow:    'var(--purple-glow)',
+    border:  'var(--purple-light)',
   },
   {
-    icon: '📱',
-    title: 'Social Media Design',
-    desc: 'Feed aesthetics, post templates, campaign visuals. Content crafted to stop the scroll mid-thumb and make people actually want to engage.',
-    glow: 'var(--cyan-glow)',
-    border: 'var(--cyan)',
+    icon:    '📱',
+    rarity:  '● EPIC',
+    rarityColor: 'var(--cyan)',
+    title:   'Social Media Design',
+    desc:    "Your feed should feel like a vibe, not a mood board dump. Templates, campaigns, launches — built to stop the scroll dead.",
+    glow:    'var(--cyan-glow)',
+    border:  'var(--cyan)',
   },
   {
-    icon: '🎬',
-    title: 'Motion Graphics',
-    desc: 'Animations, transitions, reels, intros. Ideas that move — literally. Because static is fine, but motion is memorable.',
-    glow: 'var(--pink-glow)',
-    border: 'var(--pink)',
+    icon:    '🎬',
+    rarity:  '● RARE',
+    rarityColor: 'var(--pink)',
+    title:   'Motion Graphics',
+    desc:    "Static is forgettable. Motion is memorable. From brand animations to full reels — if it moves, I make it hit.",
+    glow:    'var(--pink-glow)',
+    border:  'var(--pink)',
   },
   {
-    icon: '🌐',
-    title: 'Web Design & Dev',
-    desc: 'Websites that actually have a personality. Built to function, designed to be remembered. No cookie-cutter templates, no boring layouts.',
-    glow: 'var(--gold-glow)',
-    border: 'var(--gold)',
+    icon:    '🌐',
+    rarity:  '● RARE',
+    rarityColor: 'var(--cyan)',
+    title:   'Web Design & Dev',
+    desc:    "Cookie-cutter templates are free. A site with actual personality costs extra. I do the latter — and it's worth it.",
+    glow:    'var(--cyan-glow)',
+    border:  'var(--cyan)',
   },
 ]
 
@@ -49,8 +59,8 @@ function ServiceCard({ service, cardRef }) {
     const card = ref.current
     if (!card) return
     const rect = card.getBoundingClientRect()
-    const x = e.clientX - rect.left - rect.width  / 2
-    const y = e.clientY - rect.top  - rect.height / 2
+    const x = e.clientX - rect.left  - rect.width  / 2
+    const y = e.clientY - rect.top   - rect.height / 2
     gsap.to(card, {
       rotateY: x * 0.045,
       rotateX: -y * 0.045,
@@ -74,11 +84,21 @@ function ServiceCard({ service, cardRef }) {
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
     >
+      {/* Rarity badge */}
+      <p
+        className="pixel-text"
+        style={{ ...styles.rarity, color: service.rarityColor }}
+      >
+        {service.rarity}
+      </p>
+
       <div style={styles.iconWrap}>
         <span style={styles.icon}>{service.icon}</span>
       </div>
+
       <h3 style={styles.cardTitle}>{service.title}</h3>
       <p style={styles.cardDesc}>{service.desc}</p>
+
       <p className="pixel-text" style={styles.badge}>AVAILABLE ▶</p>
     </div>
   )
@@ -87,11 +107,16 @@ function ServiceCard({ service, cardRef }) {
 export default function Services() {
   const sectionRef = useRef(null)
   const cardRefs   = useRef([])
+  const headerRef  = useRef(null)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      gsap.from(headerRef.current, {
+        scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' },
+        y: 20, opacity: 0, duration: 0.6, ease: 'power2.out',
+      })
       gsap.from(cardRefs.current, {
-        scrollTrigger: { trigger: sectionRef.current, start: 'top 72%' },
+        scrollTrigger: { trigger: sectionRef.current, start: 'top 70%' },
         y: 55,
         opacity: 0,
         duration: 0.75,
@@ -106,12 +131,20 @@ export default function Services() {
     <section className="section-dark" id="services" ref={sectionRef}>
       <div className="inner">
         <div className="section-header">
-          <p className="chapter-tag">CHAPTER II</p>
+          <p className="chapter-tag">CHAPTER II — SKILL TREE</p>
           <h2 className="section-title">What I Build</h2>
           <p className="section-sub">
-            Five disciplines. One vision. Zero compromise.
+            Five disciplines. No limits. Pick your loadout.
           </p>
         </div>
+
+        <p
+          ref={headerRef}
+          className="pixel-text pixel-xxs"
+          style={styles.unlocked}
+        >
+          [ ALL SKILLS UNLOCKED ]
+        </p>
 
         <div style={styles.grid}>
           {SERVICES.map((s, i) => (
@@ -139,9 +172,16 @@ export default function Services() {
 }
 
 const styles = {
+  unlocked: {
+    textAlign: 'center',
+    color: 'var(--green)',
+    opacity: 0.55,
+    letterSpacing: '0.2em',
+    marginBottom: '2.5rem',
+  },
   grid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
     gap: '1.4rem',
   },
   card: {
@@ -151,6 +191,11 @@ const styles = {
     padding: '2rem 1.6rem',
     transition: 'box-shadow 0.3s, border-color 0.3s',
     cursor: 'default',
+  },
+  rarity: {
+    fontSize: '0.35rem',
+    letterSpacing: '0.18em',
+    marginBottom: '1rem',
   },
   iconWrap: {
     width: '48px',
@@ -170,14 +215,15 @@ const styles = {
   cardTitle: {
     fontFamily: 'var(--font-heading)',
     fontWeight: 700,
-    fontSize: '1.15rem',
+    fontSize: '1.1rem',
     color: 'var(--text)',
     marginBottom: '0.7rem',
   },
   cardDesc: {
-    fontSize: '0.88rem',
+    fontSize: '0.875rem',
     color: 'var(--text-muted)',
-    lineHeight: 1.75,
+    lineHeight: 1.78,
+    flexGrow: 1,
   },
   badge: {
     fontSize: '0.35rem',

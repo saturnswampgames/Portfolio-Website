@@ -7,27 +7,27 @@ gsap.registerPlugin(ScrollTrigger)
 const STEPS = [
   {
     num:   '01',
-    icon:  '🔍',
-    title: 'Discover',
-    desc:  "Brief, research, references. Understanding what you need — and what you actually mean. No assumptions, no shortcuts.",
+    icon:  '📜',
+    title: 'Accept Quest',
+    desc:  "You send the brief. I read it — actually read it, not skim it. Then I ask the questions you didn't know needed asking. We start right, or we don't start.",
   },
   {
     num:   '02',
-    icon:  '📐',
-    title: 'Define',
-    desc:  'Strategy, moodboards, direction locked in. No guessing games, no back-and-forth. Just a clear creative path forward.',
+    icon:  '🗺️',
+    title: 'Plan the Run',
+    desc:  'Before a single pixel moves, we know what we\'re making and why. Moodboards, references, strategy. Direction locked. No back-and-forth, no wasted rounds.',
   },
   {
     num:   '03',
-    icon:  '✦',
-    title: 'Design',
-    desc:  "Execution with intent. Every element earns its place. No filler, no fluff — just work that actually does something.",
+    icon:  '⚡',
+    title: 'Do the Thing',
+    desc:  "Head down, in the zone. Every element placed on purpose. If it doesn't earn its place, it doesn't get one. No filler, no fluff — just work that actually does something.",
   },
   {
     num:   '04',
     icon:  '🚀',
-    title: 'Deliver',
-    desc:  'Final assets, clean handoff, and something worth showing off. On time. On brand. On point.',
+    title: 'Ship It',
+    desc:  "Final files. Clean handoff. Something real in the world that wasn't there before. On time, on brief, and something you're actually proud of.",
   },
 ]
 
@@ -35,9 +35,14 @@ export default function Process() {
   const sectionRef = useRef(null)
   const stepRefs   = useRef([])
   const lineRef    = useRef(null)
+  const seqRef     = useRef(null)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      gsap.from(seqRef.current, {
+        scrollTrigger: { trigger: sectionRef.current, start: 'top 78%' },
+        y: 14, opacity: 0, duration: 0.5, ease: 'power2.out',
+      })
       gsap.from(stepRefs.current, {
         scrollTrigger: { trigger: sectionRef.current, start: 'top 72%' },
         y: 50,
@@ -61,12 +66,20 @@ export default function Process() {
     <section className="section-dark" id="process" ref={sectionRef}>
       <div className="inner">
         <div className="section-header">
-          <p className="chapter-tag">CHAPTER IV</p>
-          <h2 className="section-title">The Process</h2>
+          <p className="chapter-tag">CHAPTER IV — THE PLAYBOOK</p>
+          <h2 className="section-title">How It Goes Down</h2>
           <p className="section-sub">
-            Four steps. Zero guesswork. Every time.
+            Four moves. Every time. No mystery.
           </p>
         </div>
+
+        <p
+          ref={seqRef}
+          className="pixel-text pixel-xxs"
+          style={styles.seqLabel}
+        >
+          [ SEQUENCE LOADED — READY TO RUN ]
+        </p>
 
         <div style={styles.wrapper}>
           {/* Connecting line */}
@@ -105,6 +118,13 @@ export default function Process() {
 }
 
 const styles = {
+  seqLabel: {
+    textAlign: 'center',
+    color: 'var(--cyan)',
+    opacity: 0.5,
+    letterSpacing: '0.2em',
+    marginBottom: '3rem',
+  },
   wrapper: {
     position: 'relative',
   },
@@ -172,14 +192,15 @@ const styles = {
   },
   stepTitle: {
     fontFamily: 'var(--font-heading)',
-    fontWeight: 700,
+    fontWeight: 800,
     fontSize: '1.15rem',
     color: 'var(--text)',
     marginBottom: '0.6rem',
+    letterSpacing: '0.01em',
   },
   stepDesc: {
     fontSize: '0.875rem',
     color: 'var(--text-muted)',
-    lineHeight: 1.72,
+    lineHeight: 1.78,
   },
 }
