@@ -1,17 +1,16 @@
-import OmnitrixScene from '../components/OmnitrixScene'
+import OmnitrixWatch from '../components/OmnitrixWatch'
 
 export default function Home({ overlayRef }) {
   return (
-    <>
-      <div className="home-title">
-        <h1 className="glow-text">Omnitrix</h1>
-      </div>
-
-      <OmnitrixScene overlayRef={overlayRef} />
-
-      <p className="home-instruction">
-        Hover &amp; click an alien to transform
-      </p>
-    </>
+    <div style={{
+      position: 'fixed',
+      inset: 0,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      zIndex: 1,
+    }}>
+      <OmnitrixWatch overlayRef={overlayRef} />
+    </div>
   )
 }
